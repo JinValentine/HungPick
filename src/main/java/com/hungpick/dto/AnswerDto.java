@@ -4,7 +4,7 @@ public class AnswerDto {
 	
 	private String  memberCode;
 	private String  qstnCode;
-	private String     answerCode;
+	private String  answerCode;
 	private String  adminCode;
 	private String  answerContent;
 	private String  answerDate;

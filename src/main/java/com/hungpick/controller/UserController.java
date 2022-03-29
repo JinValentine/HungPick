@@ -1,6 +1,7 @@
 package com.hungpick.controller;
 
 import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.hungpick.dto.UserDto;
+import com.hungpick.dto.MemberDto;
 import com.hungpick.dto.UserVo;
 import com.hungpick.service.IUserService;
 
@@ -75,7 +76,7 @@ public class UserController {
 	
 	/*--------------------- 회원 조회 페이지로 이동 ---------------------*/
 	@RequestMapping("userInfo")
-	public String userInfo(UserDto Dto, Model model) throws Exception {
+	public String userInfo(MemberDto Dto, Model model) throws Exception {
 		String view = userService.sltMulti(Dto, model);
 		return view;
 	}
@@ -89,7 +90,7 @@ public class UserController {
 
 	/*--------------------- 회원가입 완료 눌렀을 때 ---------------------*/
 	@RequestMapping("userSignUpSubmit")
-	public String userSignUp(UserDto Dto, Model model) throws Exception {
+	public String userSignUp(MemberDto Dto, Model model) throws Exception {
 		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		Date date = new Date();
 		String time1 = format1.format(date);
@@ -109,7 +110,7 @@ public class UserController {
 
 	/*--------------------- 회원탈퇴 시도했을 때 ---------------------*/
 	@RequestMapping("userDeleteSubmit")
-	public String userDeleteSubmit(UserDto Dto, HttpSession session) throws Exception {
+	public String userDeleteSubmit(MemberDto Dto, HttpSession session) throws Exception {
 		String view = userService.deleteMember(Dto, session);
 		session.invalidate();
 		return view;
@@ -138,7 +139,7 @@ public class UserController {
 	
 	/*--------------------- 비밀번호 찾기 (비밀번호 변경) ---------------------*/
 	@RequestMapping("userFindPwUpdate")
-	public String userFindPwUpdate(UserDto Dto, HttpSession session, HttpServletResponse response) throws Exception {
+	public String userFindPwUpdate(MemberDto Dto, HttpSession session, HttpServletResponse response) throws Exception {
 		String view = userService.updatePw(Dto, session, response);
 		return view;
 	}

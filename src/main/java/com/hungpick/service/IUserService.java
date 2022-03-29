@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.ui.Model;
 
-import com.hungpick.dto.UserDto;
+import com.hungpick.dto.MemberDto;
 import com.hungpick.dto.UserVo;
 
 public interface IUserService {
@@ -16,16 +16,16 @@ public interface IUserService {
 	/*---------------- Parameter Type : DTO ----------------*/  
 	
 	// 다건조회
-	public String sltMulti(UserDto Dto, Model model) throws Exception;
+	public String sltMulti(MemberDto Dto, Model model) throws Exception;
 	
 	// 회원가입
-	public String registMember(UserDto Dto) throws Exception;
+	public String registMember(MemberDto Dto) throws Exception;
 	
 	
 	/*---------------- Parameter Type : 그 외 ----------------*/
 	
 	//단건 조회
-	public UserDto sltSearch(String memberCode) throws Exception;
+	public MemberDto sltSearch(String memberCode) throws Exception;
 	
 	// 보유 기프티콘 단건 조회
 	public String userGifticonOne(String memberCode, Model model) throws Exception;
@@ -46,30 +46,30 @@ public interface IUserService {
 	public String userUpdatePw(@Param("memberName") String memberName, @Param("memberEmail") String memberEmail, HttpSession session) throws Exception;
 	
 	// 비밀번호 찾기 -> 비밀번호 변경
-	public String updatePw(UserDto Dto, HttpSession session, HttpServletResponse response) throws Exception;
+	public String updatePw(MemberDto Dto, HttpSession session, HttpServletResponse response) throws Exception;
 	
 	// 로그인
 	public String userLogin(@Param("memberId") String memberId, @Param("memberPw") String memberPw, HttpSession session) throws Exception;
 	
 	// 회원탈퇴
-	public String deleteMember(UserDto Dto, HttpSession session) throws Exception;
+	public String deleteMember(MemberDto Dto, HttpSession session) throws Exception;
 	
 	/*---------------- Ajax 사용 ----------------*/
 	
 	// 닉네임 변경
-	public void updateNickname(UserDto Dto) throws Exception;
+	public void updateNickname(MemberDto Dto) throws Exception;
 	
 	// 이메일 변경
-	public void updateEmail(UserDto Dto) throws Exception;
+	public void updateEmail(MemberDto Dto) throws Exception;
 	
 	// 전화번호 변경
-	public void updateNumber(UserDto Dto) throws Exception;
+	public void updateNumber(MemberDto Dto) throws Exception;
 	
 	// 비밀번호 변경
-	public void updatePw(UserDto Dto) throws Exception;
+	public void updatePw(MemberDto Dto) throws Exception;
 	
 	// 포인트 변경
-	public void updatePoint(UserDto Dto) throws Exception;
+	public void updatePoint(MemberDto Dto) throws Exception;
 	
 	// ID 중복검사
 	public String checkId(String memberId) throws Exception;

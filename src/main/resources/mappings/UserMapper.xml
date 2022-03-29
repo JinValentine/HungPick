@@ -5,12 +5,12 @@
 <mapper namespace="com.hungpick.dao.IUserDao">
 
 	<!-- 단건조회 -->
-	<select id="sltSearch" resultType="userDto">
+	<select id="sltSearch" resultType="memberDto">
 		SELECT * FROM MEMBERS WHERE MEMBER_CODE = #{memberCode}
 	</select>
 
 	<!-- 다건조회 -->
-	<select id="sltMulti" resultType="userDto">
+	<select id="sltMulti" resultType="memberDto">
 		SELECT 
 			LPAD(MEMBER_CODE, 5, '0') AS MEMBER_CODE,
 			MEMBER_ID, 
@@ -25,7 +25,7 @@
 	</select>
 	
 	<!-- 로그인 -->
-	<select id="userLogin" resultType="userDto">
+	<select id="userLogin" resultType="memberDto">
 		SELECT
 			MEMBER_CODE,
 			MEMBER_ID, 
@@ -40,7 +40,7 @@
 	</select>
 	
 	<!-- 회원가입 -->
-	<insert id="registMember" parameterType="userDto">
+	<insert id="registMember" parameterType="memberDto">
 		INSERT INTO MEMBERS 
 		(
 		MEMBER_CODE, MEMBER_ID, MEMBER_PW,
@@ -87,12 +87,12 @@
 	</select>
 	
 	<!-- 아이디 찾기 -->
-	<select id="findId" resultType="userDto">
+	<select id="findId" resultType="memberDto">
 		SELECT MEMBER_ID FROM MEMBERS WHERE MEMBER_NAME = #{memberName} AND MEMBER_EMAIL = #{memberEmail}	
 	</select>
 	
 	<!-- 비밀번호 찾기 -->
-	<select id="findPw" resultType="userDto">
+	<select id="findPw" resultType="memberDto">
 		SELECT MEMBER_ID, MEMBER_PW FROM MEMBERS WHERE MEMBER_NAME = #{memberName} AND MEMBER_EMAIL = #{memberEmail}
 	</select>
 	
@@ -122,7 +122,7 @@
 	</delete>
 	
 	<!-- 기프티콘 교환을 위한 resultMap 생성 -->
-	<resultMap type="userDto" id="userDtoRm">
+	<resultMap type="memberDto" id="userDtoRm">
 	<id column="MEMBER_CODE" property="memberCode"/>
     <result column="MEMBER_ID" property="memberId"/>
     <result column="MEMBER_PW" property="memberPw"/>
@@ -153,7 +153,7 @@
 	</resultMap>
 	
 	<resultMap type="userVo" id="userVoRm">
-		<collection property="userDto" resultMap="userDtoRm"></collection>
+		<collection property="memberDto" resultMap="userDtoRm"></collection>
 		<collection property="gifticonDto" resultMap="gifticonDtoRm"></collection>
 		<collection property="gifticonExchangeDto" resultMap="gifticonExchangeDtoRm"></collection>
 	</resultMap>

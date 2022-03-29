@@ -2,15 +2,15 @@ package com.hungpick.dto;
 
 public class UserVo {
 
-	private UserDto userDto;
+	private MemberDto memberDto;
 	private GifticonDto gifticonDto;
 	private GifticonExchangeDto gifticonExchangeDto;
 	
-	public UserDto getUserDto() {
-		return userDto;
+	public MemberDto getUserDto() {
+		return memberDto;
 	}
-	public void setUserDto(UserDto userDto) {
-		this.userDto = userDto;
+	public void setUserDto(MemberDto userDto) {
+		this.memberDto = userDto;
 	}
 	public GifticonDto getGifticonDto() {
 		return gifticonDto;

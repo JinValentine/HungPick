@@ -15,7 +15,7 @@ import org.springframework.ui.Model;
 
 import com.hungpick.dao.IUserDao;
 import com.hungpick.dao.IUserDaoHist;
-import com.hungpick.dto.UserDto;
+import com.hungpick.dto.MemberDto;
 import com.hungpick.dto.UserVo;
 
 import net.nurigo.java_sdk.api.Message;
@@ -31,7 +31,7 @@ public class UserServiceImpl implements IUserService {
 	private IUserDaoHist userDaoHist;
 	
 	//단건 조회
-	public UserDto sltSearch(String memberCode) throws Exception {
+	public MemberDto sltSearch(String memberCode) throws Exception {
 		
 		return userDao.sltSearch(memberCode);
 	}
@@ -39,8 +39,8 @@ public class UserServiceImpl implements IUserService {
 	
 	// 다건조회
 	@Override
-	public String sltMulti(UserDto Dto, Model model) throws Exception {
-		List<UserDto> list = userDao.sltMulti(Dto);
+	public String sltMulti(MemberDto Dto, Model model) throws Exception {
+		List<MemberDto> list = userDao.sltMulti(Dto);
 		model.addAttribute("LIST", list);
 
 		return "userInfo";
@@ -49,7 +49,7 @@ public class UserServiceImpl implements IUserService {
 	// 회원가입
 	@Override
 	@Transactional
-	public String registMember(UserDto Dto) throws Exception {
+	public String registMember(MemberDto Dto) throws Exception {
 		userDao.registMember(Dto);
 		userDaoHist.userRegistHist("Insert " + Dto.toString());
 
@@ -60,7 +60,7 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public String userLogin(String memberId, String memberPw, HttpSession session) throws Exception {
 		
-		UserDto Dto = userDao.userLogin(memberId, memberPw);
+		MemberDto Dto = userDao.userLogin(memberId, memberPw);
 		
 		Boolean loginBool = false;
 		
@@ -127,30 +127,30 @@ public class UserServiceImpl implements IUserService {
 
 	// 닉네임 수정
 	@Override
-	public void updateNickname(UserDto Dto) throws Exception {
+	public void updateNickname(MemberDto Dto) throws Exception {
 		userDao.updateNickname(Dto);
 	}
 
 	// 이메일 수정
 	@Override
-	public void updateEmail(UserDto Dto) throws Exception {
+	public void updateEmail(MemberDto Dto) throws Exception {
 		userDao.updateEmail(Dto);
 	}
 	
 	// 전화번호 수정
 	@Override
-	public void updateNumber(UserDto Dto) throws Exception {
+	public void updateNumber(MemberDto Dto) throws Exception {
 		userDao.updateNumber(Dto);
 	}
 	
 	@Override
-	public void updatePw(UserDto Dto) throws Exception {
+	public void updatePw(MemberDto Dto) throws Exception {
 		userDao.updatePw(Dto);
 	}
 	
 	// 포인트 수정
 	@Override
-	public void updatePoint(UserDto Dto) throws Exception {
+	public void updatePoint(MemberDto Dto) throws Exception {
 		userDao.updatePoint(Dto);
 	}
 
@@ -169,7 +169,7 @@ public class UserServiceImpl implements IUserService {
 	// 아이디 찾기
 	@Override
 	public String findId(String memberName, String memberEmail, Model model) throws Exception {
-		UserDto Dto = userDao.findId(memberName, memberEmail);
+		MemberDto Dto = userDao.findId(memberName, memberEmail);
 
 		if (Dto == null) {
 			model.addAttribute("userFindId", "입력한 정보에 일치하는 아이디가 존재하지 않습니다");
@@ -191,7 +191,7 @@ public class UserServiceImpl implements IUserService {
 	// 비밀번호 변경
 	@Override
 	public String userUpdatePw(String memberName, String memberEmail, HttpSession session) throws Exception {
-		UserDto Dto = userDao.findPw(memberName, memberEmail);
+		MemberDto Dto = userDao.findPw(memberName, memberEmail);
 		if (Dto != null) {
 			if (session.getAttribute("memberId").equals(Dto.getMemberId()) == true) {
 				session.setAttribute("memberPw", Dto.getMemberPw());
@@ -209,7 +209,7 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public String updatePw(UserDto Dto, HttpSession session, HttpServletResponse response) throws Exception {
+	public String updatePw(MemberDto Dto, HttpSession session, HttpServletResponse response) throws Exception {
 		String Id = (String) session.getAttribute("memberId");
 		String Pw = (String) session.getAttribute("memberPw");
 
@@ -232,7 +232,7 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public String deleteMember(UserDto Dto, HttpSession session) throws Exception {
+	public String deleteMember(MemberDto Dto, HttpSession session) throws Exception {
 		String Code = (String) session.getAttribute("memberCode");
 		Dto.setMemberCode(Code);
 		userDao.deleteMember(Dto);
@@ -263,7 +263,7 @@ public class UserServiceImpl implements IUserService {
 	// 보유 기프티콘 단건 조회
 	@Override
 	public String userGifticonOne(String memberCode, Model model) throws Exception {
-		UserDto Dto = userDao.userGifticonOne(memberCode);
+		MemberDto Dto = userDao.userGifticonOne(memberCode);
 		
 		model.addAttribute("userGifticon",Dto);
 		

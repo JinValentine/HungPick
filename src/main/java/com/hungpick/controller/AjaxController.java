@@ -2,6 +2,7 @@ package com.hungpick.controller;
 
 import java.util.Random;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hungpick.dto.UserDto;
+import com.hungpick.dto.MemberDto;
 import com.hungpick.service.IMenuService;
 import com.hungpick.service.IReviewService;
 import com.hungpick.service.IUserService;
@@ -135,8 +136,8 @@ public class AjaxController {
 	/*--------------------- 닉네임 수정 ---------------------*/
 	@RequestMapping("updateNickname.do")
 	@ResponseBody
-	public String updateNickname(@ModelAttribute("nickname") String memberNickname, UserDto Dto, HttpSession session) throws Exception {
-		Dto = (UserDto) session.getAttribute("memberDTO");
+	public String updateNickname(@ModelAttribute("nickname") String memberNickname, MemberDto Dto, HttpSession session) throws Exception {
+		Dto = (MemberDto) session.getAttribute("memberDTO");
 		Dto.setMemberNickname(memberNickname);
 		userService.updateNickname(Dto);
 		
@@ -149,8 +150,8 @@ public class AjaxController {
 	/*--------------------- 이메일 수정 ---------------------*/
 	@RequestMapping("updateEmail.do")
 	@ResponseBody
-	public String updateEmail(@ModelAttribute("email") String memberEmail, UserDto Dto, HttpSession session) throws Exception {
-		Dto = (UserDto) session.getAttribute("memberDTO");
+	public String updateEmail(@ModelAttribute("email") String memberEmail, MemberDto Dto, HttpSession session) throws Exception {
+		Dto = (MemberDto) session.getAttribute("memberDTO");
 
 		Dto.setMemberEmail(memberEmail);
 		userService.updateEmail(Dto);
@@ -164,8 +165,8 @@ public class AjaxController {
 	/*--------------------- 비밀번호 수정 ---------------------*/
 	@RequestMapping("updatePw.do")
 	@ResponseBody
-	public String updatePw(@ModelAttribute("pw") String memberPw, UserDto Dto, HttpSession session) throws Exception {
-		Dto = (UserDto) session.getAttribute("memberDTO");
+	public String updatePw(@ModelAttribute("pw") String memberPw, MemberDto Dto, HttpSession session) throws Exception {
+		Dto = (MemberDto) session.getAttribute("memberDTO");
 
 		Dto.setMemberPw(memberPw);
 		userService.updatePw(Dto);
@@ -179,8 +180,8 @@ public class AjaxController {
 	/*--------------------- 전화번호 수정 ---------------------*/
 	@RequestMapping("updateNumber.do")
 	@ResponseBody
-	public String updateNumber(@ModelAttribute("number") String memberNumber, UserDto Dto, HttpSession session) throws Exception {
-		Dto = (UserDto) session.getAttribute("memberDTO");
+	public String updateNumber(@ModelAttribute("number") String memberNumber, MemberDto Dto, HttpSession session) throws Exception {
+		Dto = (MemberDto) session.getAttribute("memberDTO");
 
 		Dto.setMemberNumber(memberNumber);
 		userService.updateNumber(Dto);
@@ -194,8 +195,8 @@ public class AjaxController {
 	/*--------------------- 포인트 수정 ---------------------*/
 	@RequestMapping("updatePoint.do")
 	@ResponseBody
-	public String updatePoint(@ModelAttribute("point") int holdPoint, UserDto Dto, HttpSession session) throws Exception {
-		Dto = (UserDto) session.getAttribute("memberDTO");
+	public String updatePoint(@ModelAttribute("point") int holdPoint, MemberDto Dto, HttpSession session) throws Exception {
+		Dto = (MemberDto) session.getAttribute("memberDTO");
 
 		Dto.setHoldPoint(holdPoint);
 		userService.updatePoint(Dto);

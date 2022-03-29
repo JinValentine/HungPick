@@ -1,9 +1,7 @@
 package com.hungpick.dto;
 
-import java.sql.Date;
 
 public class MemberDto {
-	
 		private String memberCode;
 		private String memberId;
 		private String memberPw;
@@ -11,7 +9,7 @@ public class MemberDto {
 		private String memberNickname;
 		private String memberEmail;
 		private String memberNumber;
-		private Date memberDate;
+		private String memberDate;
 		private int holdPoint;
 		
 		public String getMemberCode() {
@@ -56,10 +54,10 @@ public class MemberDto {
 		public void setMemberNumber(String memberNumber) {
 			this.memberNumber = memberNumber;
 		}
-		public Date getMemberDate() {
+		public String getMemberDate() {
 			return memberDate;
 		}
-		public void setMemberDate(Date memberDate) {
+		public void setMemberDate(String memberDate) {
 			this.memberDate = memberDate;
 		}
 		public int getHoldPoint() {
