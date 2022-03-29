@@ -4,6 +4,7 @@ public class adminVo {
 	
 	private Notice mbrDto;
 	private AdminDto adminDto;
+	
 	public Notice getMbrDto() {
 		return mbrDto;
 	}

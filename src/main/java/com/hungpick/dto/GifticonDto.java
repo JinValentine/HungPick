@@ -8,7 +8,6 @@ public class GifticonDto {
 	private String gifticonName;
 	private String gifticonImg;
 	private int gifticonPrice;
-//	private Date gifticonDate;
 	private String gifticonDate;
 	
 	public void setGifticonDate(String gifticonDate) {

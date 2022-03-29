@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hungpick.dto.GifticonExchangeDto;
 import com.hungpick.service.IGifticonExchangeService;
+import com.hungpick.service.IGifticonService;
 
 @Controller
 public class GifticonExchangeController {
@@ -15,12 +16,12 @@ public class GifticonExchangeController {
 	private IGifticonExchangeService gifticonExchangeService;
 	
 	@Autowired
-	private GifticonController gifticonController;
+	private IGifticonService gifticonService;
 	
 	/*--------------------- 기프티콘 교환 페이지 ---------------------*/
 	@RequestMapping("gifticonExchange")
 	public void gifticonExchange(String gifticonCode, Model model) throws Exception {
-		gifticonController.gifticonsltOne(gifticonCode, model);
+		gifticonService.sltGifticon(gifticonCode, model);
 	}
 	
 	@RequestMapping("insertGifticonExchange")

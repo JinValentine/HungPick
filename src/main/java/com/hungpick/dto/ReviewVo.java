@@ -5,7 +5,6 @@ public class ReviewVo {
 	private MemberDto memberDto;
 	private ReviewDto reviewDto;
 	
-	
 	public MemberDto getMemberDto() {
 		return memberDto;
 	}

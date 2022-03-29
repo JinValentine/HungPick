@@ -6,7 +6,6 @@ public class GifticonExchangeDto {
 	private String gifticonExcode;
 	private String gifticonCode;
 	private String gifticonNumber;
-//	private Date gifticonExdate;
 	private String gifticonExdate;
 	
 	public void setGifticonExdate(String gifticonExdate) {

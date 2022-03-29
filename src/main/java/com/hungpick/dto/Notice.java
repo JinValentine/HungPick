@@ -8,6 +8,7 @@ public class Notice {
 	private String noticeContent;
 	private String noticeImg;
 	private String noticeDate;
+	
 	public String getAdminCode() {
 		return adminCode;
 	}
