@@ -1,7 +1,9 @@
-# hungpick
-First Project version 2
+HungPick이라는 이름으로 만든 협업 웹 프로젝트입니다.
 
-첫 협업프로젝트로 만든 프렌차이즈 햄버거 상품 소개 사이트인 HungPick사이트를 
+Java, Spring MVC, MyBatis를 통하여 3명이서 프랜차이즈 햄버거 상품 소개 사이트를 만들어 보았다.
+
+원본파일
 https://github.com/Kimgue/WebProject
 
-개인적으로 유지보수해보기 위해 만든 곳입니다. 
+프로젝트 발표가 끝난 후에 개인적으로 유지보수를 하고 싶은 것들이 있어
+따로 업로드를 해둔 곳입니다. 
