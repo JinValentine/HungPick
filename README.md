@@ -5,4 +5,7 @@ Java, Spring MVC, MyBatis를 통하여 3명이서 프랜차이즈 햄버거 상�
 원본 Github 주소
 https://github.com/Kimgue/WebProject
 
+해당 포토폴리오 파일
+https://drive.google.com/file/d/1OGpio47QQqXx92e0w-OSr-mAi-BgrF6e/view?usp=sharing
+
 프로젝트 발표가 끝난 후에 개인적으로 유지보수를 하고 싶은 것들이 있어 따로 업로드를 해둔 곳입니다. 
