@@ -5,6 +5,3 @@
 
 원본 Github 주소
 https://github.com/Kimgue/WebProject
-
-해당 프로젝트 포토폴리오 파일
-https://drive.google.com/file/d/1OGpio47QQqXx92e0w-OSr-mAi-BgrF6e/view?usp=sharing
