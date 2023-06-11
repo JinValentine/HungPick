@@ -1,5 +1,20 @@
 # HungPick
 
+## 기간
+2021.12 ~ 2022.02
+
+## 개발 환경
+
+### Java 8
+### JQuery, AJAX
+### JSP
+### Spring
+### ORACLE
+### MyBatis
+### Git
+
+## 프로젝트 PPT 자료
+
 ![헝픽_page-0001](https://github.com/jinugi214/hungPick/assets/77107216/9ccdeaa8-cd6b-48b4-b18f-296317193e81)
 ![헝픽_page-0002](https://github.com/jinugi214/hungPick/assets/77107216/0b0b625b-ff08-4fc1-91cb-b1868c3f18cd)
 ![헝픽_page-0004](https://github.com/jinugi214/hungPick/assets/77107216/a72c0977-e44b-4b3e-b1b8-f538daeb11d6)
